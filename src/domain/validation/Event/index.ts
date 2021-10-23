@@ -4,11 +4,11 @@ import { IValidatorEvent } from "../../DTO/validation/Event";
 export default class ValidationEvent implements IValidatorEvent {
     validFieldsSave(fields: IEventDTO): boolean | Error {
         try {
-            if(fields.name === undefined || fields.date === undefined || fields.description === undefined) {
+            if(fields.who_create_event === undefined || fields.name === undefined || fields.date === undefined || fields.description === undefined) {
                 throw new Error('Dados inválidos.');
             }
     
-            if(fields.name.trim() === '' || fields.description === '') {
+            if(fields.who_create_event.trim() === '' || fields.name.trim() === '' || fields.description === '') {
                 throw new Error('Dados inválidos.');
             }
 

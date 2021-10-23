@@ -26,6 +26,7 @@ export default class EventSaveController {
 export namespace EventSaveRequest {
     export type request = {
         body: {
+            who_create_event: string;
             id?: string;
             name: string;
             description: string;

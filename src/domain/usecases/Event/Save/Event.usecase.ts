@@ -20,6 +20,6 @@ export default class EventUseCase {
 			throw new Error('Já existe um evento com esse nome.');
 		}
 		
-		return this.userRepository.createEvent(new Event(data.name, data.description, data.photo as string, new Date(data.date), data.id));
+		return this.userRepository.createEvent(new Event(data.name, data.description, data.photo as string, new Date(data.date), data.id), data.who_create_event);
 	}
 };

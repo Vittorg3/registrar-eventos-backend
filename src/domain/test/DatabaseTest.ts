@@ -92,7 +92,7 @@ export default class DatabaseTest implements IUserRepository {
         return true;
     }
 
-    async createEvent(event: Event): Promise<boolean> {
+    async createEvent(event: Event, who_create_event: string): Promise<boolean> {
         if(event.name === undefined) {
             throw new Error('dados inválidos');
         }

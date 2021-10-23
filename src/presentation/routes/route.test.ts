@@ -155,6 +155,7 @@ describe('test routes', () => {
         test('should return an valid http response 200. Remove success.', async () => {
             await request(app).delete('/remove/user/group')
             .query({
+                group: 'kjasd',
                 who_remove_id: 'id de quem vai remover', 
                 who_removed_id: 'id de quem vai ser removido'
             })

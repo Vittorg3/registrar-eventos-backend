@@ -16,6 +16,7 @@ const cryptService = new BcryptService();
 import userModel from '../drivers/mongoose/models/User';
 import groupModel from '../drivers/mongoose/models/Group';
 import eventModel from '../drivers/mongoose/models/Event';
+import eventLeadersModel from '../drivers/mongoose/models/Event_Leader';
 import groupLeadersModel from '../drivers/mongoose/models/Group_Leader';
 import groupSubscriberModel from '../drivers/mongoose/models/Group_Subscribers';
 
@@ -91,13 +92,23 @@ export default class MongoRepository implements IUserRepository {
         return true;
     }
 
-    async createEvent(event: Event): Promise<boolean> {
+    async createEvent(event: Event, who_create_event: string): Promise<boolean> {
         await eventModel.create(event);
+        const userWhoCreate = await userModel.findOne({id: who_create_event});
+        await eventLeadersModel.create({event: event.name, user_name: userWhoCreate.name, id: buildToken()});
         return true;
     }
 
     async removeEvent(data: IEventRemoveDTO): Promise<boolean> {
-        //ainda falta validar se o usuário têm permissão para remover
+        const userWhoRemove = await userModel.findOne({id: data.who_edit_id});
+        const event = await eventModel.findOne({id: data.event_id});
+
+        const userIsAuthorized = await eventLeadersModel.findOne({user_name: userWhoRemove.name, event: event.name});
+
+        if(!userIsAuthorized) {
+            throw new Error('Usuário não têm permissão para remover o grupo.');
+        }
+
         const infoDeleted = await eventModel.deleteOne({id: data.event_id});
 
         if(infoDeleted.deletedCount === 0) {
@@ -108,7 +119,15 @@ export default class MongoRepository implements IUserRepository {
     }
 
     async editEvent(data: IEventEditDTO): Promise<boolean> {
-        //ainda falta validar se o usuário têm permissão para editar
+        const userWhoRemove = await userModel.findOne({id: data.who_edit_id});
+        const event = await eventModel.findOne({id: data.event_id});
+
+        const userIsAuthorized = await eventLeadersModel.findOne({user_name: userWhoRemove.name, event: event.name});
+
+        if(!userIsAuthorized) {
+            throw new Error('Usuário não têm permissão para remover o grupo.');
+        }
+
         const infoUpdated = await eventModel.findOneAndUpdate({id: data.event_id}, {
             name: data.name,
             description: data.description,

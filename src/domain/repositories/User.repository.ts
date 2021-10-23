@@ -21,7 +21,7 @@ export interface IUserRepository {
 	saveGroup(group: Group): Promise<boolean>;
 	EditGroup(data: IGroupEditDTO): Promise<boolean>;
 	RemoveGroup(id: IGroupRemoveDTO): Promise<boolean>;
-	createEvent(event: Event): Promise<boolean>;
+	createEvent(event: Event, who_create_event: string): Promise<boolean>;
 	removeEvent(data: IEventRemoveDTO): Promise<boolean>;
 	editEvent(data: IEventEditDTO): Promise<boolean>;
 	inviteToGroup(data: IUserInviteToGroupDTO): Promise<boolean>;

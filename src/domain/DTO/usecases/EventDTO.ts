@@ -1,4 +1,5 @@
 export interface IEventDTO {
+	who_create_event: string;
 	id?: string;
 	name: string;
 	description: string;

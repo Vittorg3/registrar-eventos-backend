@@ -14,6 +14,7 @@ describe('test EventSave controller', () => {
 
         const httpRequest: EventSaveRequest.request = {
             body: {
+                who_create_event: 'id de quem criou',
                 name: 'Nome do evento aqui',
                 description: 'Evento para teste',
                 date: new Date(),
