@@ -13,6 +13,10 @@ import { IEventEditDTO, IEventRemoveDTO } from "../DTO/usecases/EventDTO";
 import { IGroupEditDTO, IGroupRemoveDTO } from "../DTO/usecases/GroupDTO";
 
 export default class DatabaseTest implements IUserRepository {
+    async findEventByName(name: String): Promise<boolean> {
+        return false;
+    }
+
     async findGroupByName(name: string): Promise<boolean> {
         return false;
     }

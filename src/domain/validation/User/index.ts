@@ -55,11 +55,11 @@ export default class ValidationUser implements IValidatorUser {
 
     validFieldsRemoveFromGroup(fields: IUserRemoveFromGroupDTO): boolean | Error {
         try {
-            if(fields.who_remove_id === undefined || fields.who_removed_id === undefined) {
+            if(fields.who_remove_id === undefined || fields.who_removed_id === undefined || fields.group === undefined) {
                 throw new Error('Dados inválidos.');
             }
 
-            if(fields.who_remove_id.trim() === '' || fields.who_removed_id.trim() === '') {
+            if(fields.who_remove_id.trim() === '' || fields.who_removed_id.trim() === '' || fields.group.trim() === '') {
                 throw new Error('Dados inválidos.');
             }
 

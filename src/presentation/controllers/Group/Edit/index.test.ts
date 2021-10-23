@@ -14,6 +14,7 @@ describe('test GroupEdit controller', () => {
 
         const httpRequest: GroupEditControllerRequest.request = {
             body: {
+                who_edit_group: "id de quem está editando",
                 id_group: 'id do grupo que quer editar',
                 name: 'nome de grupo qualquer'
             }

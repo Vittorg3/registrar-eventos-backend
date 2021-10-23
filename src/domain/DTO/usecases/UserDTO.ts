@@ -15,9 +15,11 @@ export interface IUserSigninDTO {
 export interface IUserInviteToGroupDTO {
     who_invite_id: string;
     who_invited_id: string;
+    group: string;
 };
 
 export interface IUserRemoveFromGroupDTO {
+    group: string;
     who_remove_id: string;
     who_removed_id: string;
 };

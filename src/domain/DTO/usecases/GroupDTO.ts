@@ -1,4 +1,5 @@
 export interface IGroupSaveDTO {
+    who_create_group: string;
     id?: string;
     name: string;
     description: string;
@@ -7,6 +8,7 @@ export interface IGroupSaveDTO {
 };
 
 export interface IGroupEditDTO {
+    who_edit_group: string;
     id_group: string;
     name?: string;
     description?: string;
@@ -15,5 +17,6 @@ export interface IGroupEditDTO {
 };
 
 export interface IGroupRemoveDTO {
+    who_remove_group: string;
     id_group: string;
 };

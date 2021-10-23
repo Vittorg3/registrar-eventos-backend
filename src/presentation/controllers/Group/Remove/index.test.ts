@@ -14,6 +14,7 @@ describe('test GroupRemove controller', () => {
 
         const httpRequest: GroupRemoveControllerRequest.request = {
             query: {
+                who_remove_group: "id de quem quer remover",
                 id_group: 'id do grupo que quer editar'
             }
         };

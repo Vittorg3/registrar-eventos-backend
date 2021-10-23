@@ -15,7 +15,8 @@ describe('test UserInviteToGroup controller', () => {
         const httpRequest: UserInviteToGroupRequest.request = {
             body: {
                 who_invite_id: 'id de quem vai convidar',
-                who_invited_id: 'id de quem vai ser convidado'
+                who_invited_id: 'id de quem vai ser convidado',
+                group: "nome do grupo"
             }
         };
 

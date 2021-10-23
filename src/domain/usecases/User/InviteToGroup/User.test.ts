@@ -10,7 +10,7 @@ describe('test User invite to group', () => {
 
         const userInviteGroupUseCase = new UserInviteToGroupUseCase(databaseTest, validationDependencie);
 
-        const res = await userInviteGroupUseCase.execute({who_invite_id: 'id de quem convidou', who_invited_id: 'id do usuario convidado'});
+        const res = await userInviteGroupUseCase.execute({who_invite_id: 'id de quem convidou', who_invited_id: 'id do usuario convidado', group: 'nome do grupo aqui'});
         expect(res).toBeTruthy();
     });
 });

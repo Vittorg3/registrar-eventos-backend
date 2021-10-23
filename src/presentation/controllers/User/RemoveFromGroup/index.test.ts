@@ -14,6 +14,7 @@ describe('test RemoveFromGroup use case', () => {
 
         const httpRequest: UserRemoveFromGroupRequest.request = {
             query: {
+                group: 'id do grupo',
                 who_remove_id: 'id de quem está removendo',
                 who_removed_id: 'id de quem quer remover'
             }

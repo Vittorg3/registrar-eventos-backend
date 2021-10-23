@@ -22,8 +22,8 @@
 -> Se registrar [x]
 -> Logar [x]
 -> Criar um grupo [x]
--> Excluir um grupo []
--> Editar um grupo []
+-> Excluir um grupo [x]
+-> Editar um grupo [x]
 -> Convidar usuários para o grupo [x]
 -> Remover usuários do grupo [x]
 
@@ -32,18 +32,18 @@
 -> Se registrar [x]
 -> Logar [x]
 -> Criar um grupo [x] 
--> Excluir um grupo []
--> Editar um grupo []
+-> Excluir um grupo [x]
+-> Editar um grupo [x]
 -> Convidar usuários para o grupo [x]
 -> Remover usuários do grupo [x]
 
 ## NÃO PODE FALTAR (implemetation)
 
--> Se registrar []
--> Logar []
--> Criar um grupo [] 
--> Excluir um grupo []
--> Editar um grupo []
+-> Se registrar [x]
+-> Logar [x]
+-> Criar um grupo [x] 
+-> Excluir um grupo [x]
+-> Editar um grupo [x]
 -> Convidar usuários para o grupo []
 -> Remover usuários do grupo []
 

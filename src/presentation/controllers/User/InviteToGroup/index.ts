@@ -28,6 +28,7 @@ export namespace UserInviteToGroupRequest {
         body: {
             who_invite_id: string;
             who_invited_id: string;
+            group: string;
         }
     };
 };

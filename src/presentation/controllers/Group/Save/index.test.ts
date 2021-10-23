@@ -14,6 +14,7 @@ describe('test SaveGroup controller', () => {
 
         const httpRequest: GroupSaveControllerRequest.request = {
             body: {
+                who_create_group: 'id de quem criou o grupo',
                 id: 'Caso queira passar um id definido para o grupo',
                 name: 'Nome do grupo',
                 description: 'Descrição do grupo',

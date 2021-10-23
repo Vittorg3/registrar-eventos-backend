@@ -26,6 +26,7 @@ export default class GroupEditController {
 export namespace GroupEditControllerRequest {
     export type request = {
         body: {
+            who_edit_group: string;
             id_group: string;
             name?: string;
             description?: string;

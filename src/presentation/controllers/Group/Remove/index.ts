@@ -9,7 +9,7 @@ export default class GroupRemoveController {
     async handle (request: GroupRemoveControllerRequest.request) {
         const response = new HttpResponse();
         const data = request.query;
-
+        
         try {
             const res = await this.removeGroupUseCase.execute(data);
             return response.successResponse({res});
@@ -24,6 +24,7 @@ export default class GroupRemoveController {
 export namespace GroupRemoveControllerRequest {
     export type request = {
         query: {
+            who_remove_group: string;
             id_group: string;
         }
     }

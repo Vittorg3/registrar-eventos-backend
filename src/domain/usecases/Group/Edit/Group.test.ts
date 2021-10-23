@@ -9,7 +9,7 @@ describe('test GroupEdit usecase', () => {
         const validationDependencie = new ValidationGroup();
         const editGroupUseCase = new GroupEditUseCase(databaseTest, validationDependencie);
 
-        const res = await editGroupUseCase.execute({id_group: 'id do grupo para editar', name: 'nome qualquer'});
+        const res = await editGroupUseCase.execute({who_edit_group: "id de quem esta editando", id_group: 'id do grupo para editar', name: 'nome qualquer'});
         expect(res).toBeTruthy();
     });
 });

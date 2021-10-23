@@ -9,7 +9,7 @@ describe('test GroupRemove usecase', () => {
 
         const removeGroupUseCase = new GroupRemoveUseCase(databaseTest, validatorDependencie);
 
-        const res = await removeGroupUseCase.execute({id_group: 'id do group para remove-lo'});
+        const res = await removeGroupUseCase.execute({who_remove_group: "id de quem quer remover", id_group: 'id do group para remove-lo'});
         expect(res).toBeTruthy();
     });
 });

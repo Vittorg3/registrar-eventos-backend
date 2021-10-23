@@ -10,7 +10,7 @@ describe('Test GroupSave usecase', () => {
 
         const groupSaveUseCase = new GroupSaveUseCase(databaseTest, validatorDependencie);
 
-        const group = new Group('Nome do grupo', 'descrição do grupo');
+        const group = new Group('id de quem criou', 'Nome do grupo', 'descrição do grupo');
 
         const res = await groupSaveUseCase.execute(group);
         expect(res).toBeTruthy();

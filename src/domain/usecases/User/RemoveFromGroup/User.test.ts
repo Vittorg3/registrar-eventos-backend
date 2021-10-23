@@ -10,7 +10,7 @@ describe('test User remove from group usecase', () => {
 
         const removeUserFromGroupUseCase = new UserRemoveFromGroupUseCase(databaseTest, validatorDependencie);
 
-        const res = await removeUserFromGroupUseCase.execute({who_remove_id: 'id de quem vai remover', who_removed_id: 'id de quem vai ser removido'});
+        const res = await removeUserFromGroupUseCase.execute({group: 'id do grupo', who_remove_id: 'id de quem vai remover', who_removed_id: 'id de quem vai ser removido'});
         expect(res).toBeTruthy();
     });
 });

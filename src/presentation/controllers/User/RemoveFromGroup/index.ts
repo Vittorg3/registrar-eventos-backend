@@ -11,7 +11,7 @@ export default class UserRemoveFromGroupController {
     async handle (request: UserRemoveFromGroupRequest.request): Promise<TypeHttpResponse> {
         const response = new HttpResponse();
         const data = request.query;
-
+        
         try {
             const res = await this.userRemoveFromGroupUseCase.execute(data);
             return response.successResponse({res});
@@ -26,6 +26,7 @@ export default class UserRemoveFromGroupController {
 export namespace UserRemoveFromGroupRequest {
     export type request = {
         query: {
+            group: string;
             who_remove_id: string;
             who_removed_id: string;
         }

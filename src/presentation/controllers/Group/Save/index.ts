@@ -26,6 +26,7 @@ export default class GroupSaveController {
 export namespace GroupSaveControllerRequest {
     export type request = {
         body: {
+            who_create_group: string;
             id?: string;
             name: string;
             description: string;

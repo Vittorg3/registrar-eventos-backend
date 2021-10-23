@@ -19,6 +19,6 @@ export default class GroupSaveUseCase {
             throw new Error('Já existe um grupo com esse nome.');
         }
 
-        return this.userRepository.saveGroup(new Group(data.name, data.description, data.photo, data.subscribers, data.id));
+        return this.userRepository.saveGroup(new Group(data.who_create_group, data.name, data.description, data.photo, data.subscribers, data.id));
     }
 };

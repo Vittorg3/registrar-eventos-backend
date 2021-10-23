@@ -307,6 +307,7 @@ describe('test routes', () => {
         test('should return an valid http response 200', async () => {
             await request(app).put('/edit/group')
             .send({
+                who_edit_group: 'id de quem quer alterar',
                 id_group: 'id do grupo que quer editar',
                 name: 'Novo nome aqui'
             })
@@ -333,6 +334,8 @@ describe('test routes', () => {
         test('should return an valid http response 200', async () => {
             await request(app).post('/save/group')
             .send({
+                who_create_group: "id de quem cria",
+                id_group: 'id do grupo',
                 name: 'Nome qualquer do grupo',
                 description: 'Descrição qualquer do grupo'
             })
@@ -368,6 +371,7 @@ describe('test routes', () => {
         test('should return an valid http response 200', async () => {
             await request(app).delete('/remove/group')
             .query({
+                who_remove_group: 'id de quem quer remover',
                 id_group: 'id do grupo que quer remover'
             })
             .expect(200);

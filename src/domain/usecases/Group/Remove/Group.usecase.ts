@@ -10,6 +10,6 @@ export default class GroupRemoveUseCase {
 
     execute (data: IGroupRemoveDTO) {
         this.validatorGroup.validFieldsRemove(data);
-        return this.userRepository.RemoveGroup({id_group: data.id_group});
+        return this.userRepository.RemoveGroup({who_remove_group: data.who_remove_group, id_group: data.id_group});
     }
 };  
